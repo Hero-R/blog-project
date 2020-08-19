@@ -8,14 +8,14 @@ import {Post} from './post';
 })
 export class AppComponent implements OnInit {
   title: 'Blog';
-  posts: Post[] = [];
+  // posts: Post[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.posts.push(new Post('Mon premier Post', 'C\'est le contenu de mon premier post', 0, new Date()));
+    /*this.posts.push(new Post('Mon premier Post', 'C\'est le contenu de mon premier post', 0, new Date()));
     this.posts.push(new Post('Mon deuxième Post', 'C\'est le contenu de mon deuxième post', 0, new Date()));
-    this.posts.push(new Post('Encore un Post', 'C\'est le contenu de ce post', 0, new Date()));
+    this.posts.push(new Post('Encore un Post', 'C\'est le contenu de ce post', 0, new Date()));*/
   }
 
   /*posts = [

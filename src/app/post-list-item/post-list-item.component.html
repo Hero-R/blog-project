@@ -1,11 +1,11 @@
 <li [ngClass]="{'list-group-item': true,
-                'list-group-item-success': postLoveIts > 0,
-                'list-group-item-danger': postLoveIts < 0}"
+                'list-group-item-success': post.loveIts > 0,
+                'list-group-item-danger': post.loveIts < 0}"
     [ngStyle]="{color:getColor()}">
-  <p style="text-align: right">{{postCreatedAt | date:'MM/dd/yyyy, HH:mm'}} AM</p>
-  <h3 style="display: inline;font-weight: bold">{{postTitle}}</h3>
-  <p>{{postContent}}</p>
-  <button class="btn btn-success" (click)="onLike()">Love it ! {{like}}</button>
-  <button class="btn btn-danger" (click)="onDislike()" style="margin-left:5px">Don't love it ! {{dislike}}</button>
+  <p style="text-align: right">{{post.createdAt | date:'MM/dd/yyyy, HH:mm'}} AM</p>
+  <h3 style="display: inline;font-weight: bold">{{post.title}}</h3>
+  <p>{{post.content}}</p>
+  <button class="btn btn-success" (click)="onLike()">Love it ! {{post.like}}</button>
+  <button class="btn btn-danger" (click)="onDislike()" style="margin-left:5px">Don't love it ! {{post.dislike}}</button>
   <button class="btn btn-warning float-right" (click)="onRemove()">Supprimer Post</button>
 </li>
