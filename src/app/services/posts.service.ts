@@ -11,21 +11,29 @@ export class PostsService {
   postsSubject = new Subject<Post[]>();
 
 
-  constructor() { }
+  constructor() {
+    this.getPosts();
+  }
 
   // Save and emit the Subject
   emitPosts() {
     this.postsSubject.next(this.posts);
   }
 
-  likePost() {
-    /* this.like++;
-    return this.like - this.dislike; */
+  getPosts() {
+    this.posts.push(new Post('Mon premier Post', 'C\'est le contenu de mon premier post', 0, new Date()));
+    this.posts.push(new Post('Mon deuxième Post', 'C\'est le contenu de mon deuxième post', 0, new Date()));
+    this.posts.push(new Post('Encore un Post', 'C\'est le contenu de ce post', 0, new Date()));
+    this.emitPosts();
+  }
+  likePost(post: Post) {
+    post.like++;
+    return post.like - post.dislike;
   }
 
-  dislikePost() {
-    /* this.dislike++;
-    return this.like - this.dislike; */
+  dislikePost(post: Post) {
+    post.dislike++;
+    return post.like - post.dislike;
   }
   addNewPost(newPost: Post) {
     this.posts.push(newPost);
@@ -35,9 +43,11 @@ export class PostsService {
   removePost(post: Post) {
     const postIndexToRemove = this.posts.findIndex(
       (postElement) => {
-        return true;
+        if (postElement === post) {
+          return true;
+        }
       }
-    )
+    );
     this.posts.splice(postIndexToRemove, 1);
     this.emitPosts();
   }
