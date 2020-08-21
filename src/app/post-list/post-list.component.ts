@@ -29,6 +29,7 @@ export class PostListComponent implements OnInit, OnDestroy {
         this.posts = posts;
       }
     );
+    this.postsService.getPosts();
     this.postsService.emitPosts();
   }
 

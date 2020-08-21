@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Post} from './post';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,20 @@ export class AppComponent implements OnInit {
   title: 'Blog';
   // posts: Post[] = [];
 
-  constructor() { }
+  constructor() {
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: 'AIzaSyASsE-BVsFEgtEwIcYo14XWaLkl0PnLh8Y',
+      authDomain: 'blog-project-oc.firebaseapp.com',
+      databaseURL: 'https://blog-project-oc.firebaseio.com',
+      projectId: 'blog-project-oc',
+      storageBucket: 'blog-project-oc.appspot.com',
+      messagingSenderId: '248892316678',
+      appId: '1:248892316678:web:d95a7fd33e32fd1d8df787'
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  }
 
   ngOnInit(): void {
     /*this.posts.push(new Post('Mon premier Post', 'C\'est le contenu de mon premier post', 0, new Date()));

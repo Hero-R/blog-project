@@ -4,10 +4,11 @@ export class Post {
   content: string;
   loveIts: number;
   createdAt: Date;*/
-  like = 0;
-  dislike = 0;
+  // like = 0;
+  // dislike = 0;
 
-  constructor(public title: string, public content: string, public loveIts: number, public createdAt: Date) {
+  constructor(public title: string, public content: string, public loveIts: number, public createdAt: string,
+              public like: number, public dislike: number) {
 
   }
 }
