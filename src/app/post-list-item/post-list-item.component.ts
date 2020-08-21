@@ -24,11 +24,11 @@ export class PostListItemComponent implements OnInit {
   }
 
   onLike() {
-    this.post.loveIts = this.postsService.likePost(this.post);
+    this.postsService.likePost(this.post);
   }
 
   onDislike() {
-    this.post.loveIts = this.postsService.dislikePost(this.post);
+    this.postsService.dislikePost(this.post);
   }
 
   getColor() {
